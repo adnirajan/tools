@@ -12,9 +12,9 @@
 #include "udf.h"
 #include "sg.h"
 /* Constants Definition */
-#define PRANDTL 0.67
+#define PRANDTL 0.71
 /* Thermal conductivity using constant Prandtl number */
-DEFINE_PROPERTY(THERMAL_CONDUCTIVITY_CONST_PRANDTL, c, t)
+DEFINE_PROPERTY(thermal_conductivity_const_prandtl, c, t)
 {
 #if !RP_HOST /* Does nothing in Serial */
 	real Pr = PRANDTL;
