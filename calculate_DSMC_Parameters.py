@@ -5,7 +5,7 @@
 
 import math
 
-print ("Hello! Parameter setup scripts")
+print ("Hello! Parameter setup script for DSMC calculations")
 
 # Constants
 NA = 6.0221409E+26 #/* in terms of kmol */
