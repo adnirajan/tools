@@ -1,6 +1,7 @@
 #!/bin/python3
 # Python Scirpt to estimate input parameters to SPARTA
 # Nirajan Adhikari (03-03-2020)
+# Note: Only configured for 2D. Can be easily changed to 3D.
 
 import math
 
@@ -22,6 +23,9 @@ d_ref  = 4.17E-10 	#m
 # Domain Boundaries
 Lx = 8.0e-3
 Ly = 2.0e-3
+
+# Average No of desired particles in a cell (required to calculate Fnum)
+NP_Cell = 100.0 # Recommended (Requires whole number)
 
 # Calculate Parameters
 # number density
@@ -53,6 +57,6 @@ print("mct = ", '{:.2e}'.format(mct), " mtt = ", '{:.2e}'.format(mtt), " dt = mi
 # Fnum
 V = Lx * Ly * 1.0;
 Nreal = V * n_inf;
-NSim = 100.0 * NCXmin * NCYmin * 1.0 # Each cell contain 100 simulated particles (coarse)
+NSim = NP_CELL * NCXmin * NCYmin * 1.0 # Each cell contain 100 simulated particles (coarse)
 Fnum = Nreal/NSim
-print("Fnum (100 simulators/cell) = ", '{:.3e}'.format(Fnum))
+print("Fnum (", int(NP_CELL), " simulators/cell) = ", '{:.3e}'.format(Fnum))
